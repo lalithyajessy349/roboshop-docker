@@ -1,8 +1,8 @@
-FROM node:20    #nodeje image
-WORKDIR /opt/server  #create directory
-COPY package.json .    #copied application code
+FROM node:20   
+WORKDIR /opt/server  
+COPY package.json .   
 COPY *.js .
-RUN nmp install  #to install dependencies
+RUN nmp install 
 ENV MONGO="true" \
     MONGO_URL="mongodb://mongodb:27017/catalogue"
-CMD ["node","server.js"]    #to start the container
+CMD ["node","server.js"]   
